@@ -1,0 +1,129 @@
+footer {
+  background: $blue;
+  color: $white;
+  padding: 25px 0;
+}
+
+.footer-block {
+  margin-bottom: 35px;
+}
+
+.footer-navigation {
+  margin-bottom: 35px;
+
+  .navigation-title {
+    margin-top: 0;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+.wp-block-gallery {
+  margin: 25px 0;
+}
+
+.blocks-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  figure {
+    transition: .3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.column {
+  &-1 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &-2 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &-3 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &-4 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &-5 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  &-6 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  &-7 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+  &-8 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+  &-9 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(9, 1fr);
+    }
+  }
+  &-10 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(10, 1fr);
+    }
+  }
+  &-11 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(11, 1fr);
+    }
+  }
+  &-12 {
+    .blocks-gallery-grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}
+
+.copyright {
+  color: darken($white, 25%);
+  font-size: .625rem;
+}
+
+@media (min-width: 850px) {
+  .footer-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .sidebar-container {
+    padding-top: 64px;
+  }
+}

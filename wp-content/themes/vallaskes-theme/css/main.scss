@@ -1,0 +1,136 @@
+.content-item {
+  border: 2px solid $blue;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 25px 0;
+  background: $white;
+
+  h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+.question {
+  background: lighten($blue, 30%);
+  color: $blue;
+  padding: 25px 0;
+
+  h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  &-list {
+    padding: 0 25px;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-item {
+    background: $white;
+    padding: 10px 40px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    counter-increment: howto-cnt;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: counter(howto-cnt);
+      position: absolute;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      left: -18px;
+      top: 50%;
+      font-size: 1.125rem;
+      font-weight: 700;
+      background: $blue;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1px;
+      transform: translateY(-50%);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      color: $blue;
+      text-transform: uppercase;
+    }
+
+    div {
+      color: $darkLight;
+    }
+  }
+}
+
+.faq {
+  margin: 25px 0;
+
+  h2 {
+    text-align: center;
+  }
+
+  &-item {
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    transition: .3s;
+
+    &[data-full="true"],
+    &:hover {
+      background: darken($greyLight, 15%);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .faq-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+
+      &:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: $arrow no-repeat;
+        position: absolute;
+        right: 10px;
+        transform: rotate(180deg);
+        filter: invert(.7);
+        transition: .3s;
+      }
+    }
+
+    &[data-full="true"] {
+      .faq-answer {
+        max-height: 50vh;
+        transition: 1s linear;
+      }
+
+      .faq-title {
+        &:after {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+  &-schema {
+    border-left: 2px solid $red;
+    padding: 10px 30px;
+  }
+}

@@ -1,0 +1,496 @@
+.casino {
+  padding: 15px 0;
+  background: $white;
+
+  h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &-item {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: .3s;
+    box-shadow: 0 0 0 2px $blue;
+
+    &:hover {
+      box-shadow: 0 0 0 4px $blue;
+    }
+
+    &.top {
+      box-shadow: 0 0 0 2px $red;
+
+
+      .casino-item-header {
+        grid-template-areas: 'n t t' 'n i b' 'n r d' 'g g g';
+      }
+
+      .casino-item-footer {
+        max-height: 100vh;
+        padding: 10px;
+      }
+
+      .number {
+        background: $red;
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 4px $red;
+      }
+    }
+
+    &.full {
+      .casino-item-footer {
+        max-height: 100vh;
+        padding: 10px 10px 0;
+      }
+
+      .read-more {
+        border-bottom: 1px solid $blue;
+
+        &:after {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &-header {
+      display: grid;
+      grid-template-areas: 'n i b' 'n r d' 'g g g' 'm m m';
+      grid-template-columns: 40px 1fr 1fr;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .read-more,
+      .rating {
+        flex-direction: row;
+      }
+    }
+
+    &-footer {
+      padding: 0 10px 0;
+      display: grid;
+      grid-template-areas: 'b b' 'p s' 'd d';
+      grid-template-columns: 1fr 1fr;
+      max-height: 0;
+      overflow: hidden;
+      transition: 1s all ease-in-out;
+    }
+  }
+}
+
+.big-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.top-title {
+  grid-area: t;
+  color: $red;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-bottom: 1px solid $blue;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.number {
+  grid-area: n;
+  font-size: 1.25rem;
+  color: #fff;
+  background: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.casino-image {
+  grid-area: i;
+  padding: 5px 10px;
+  position: relative;
+
+  &:after {
+    content: '';
+    width: 1px;
+    height: 70%;
+    background: $blue;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
+}
+
+.rating {
+  grid-area: r;
+  position: relative;
+  padding: 5px 10px;
+  justify-content: center;
+
+  &:after {
+    content: '';
+    width: 1px;
+    height: 70%;
+    background: $blue;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  .big-text {
+    display: none;
+  }
+
+  &-area {
+    position: relative;
+    width: 85px;
+    height: 16px;
+    margin: 10px;
+
+    & > div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: $star;
+      background-size: auto 1em;
+      background-position: 0;
+    }
+
+    .grey {
+      filter: grayscale(1);
+    }
+  }
+
+  &-number {
+    font-weight: 700;
+
+    small {
+      color: $blue;
+      font-weight: normal;
+    }
+  }
+}
+
+.bonus {
+  grid-area: b;
+  padding: 5px 10px;
+
+  &-money {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.deposit {
+  grid-area: d;
+  margin: 0 auto;
+  padding: 5px 10px;
+}
+
+.button-block {
+  grid-area: g;
+  border-top: 1px solid $blue;
+  border-bottom: 1px solid $blue;
+  margin-top: -1px;
+  padding: 15px;
+}
+
+button.play {
+  background: $red;
+  padding: 15px 35px;
+  color: $white;
+  text-transform: uppercase;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s;
+  cursor: pointer;
+
+  &:hover {
+    background: darken($red, 20%);
+  }
+}
+
+.read-more {
+  grid-area: m;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0,0,0,0);
+  cursor: pointer;
+  transition: .5s;
+
+  &:after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    background: $arrow no-repeat;
+    transform: rotate(180deg);
+    filter: brightness(.3);
+    margin-left: 10px;
+    transition: .5s ease-in-out;
+  }
+}
+
+.benefit {
+  grid-area: b;
+  padding: 10px 0;
+  border-bottom: 1px solid $blue;
+
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-item {
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin-right: 10px;
+      background: $checkGreen no-repeat;
+    }
+  }
+}
+
+.payout {
+  grid-area: p;
+  margin: 10px 0;
+  padding: 0 10px;
+  text-align: center;
+  border-right: 1px solid $blue;
+}
+
+.payout-speed {
+  grid-area: s;
+  margin: 10px;
+  text-align: center;
+}
+
+.deposit-icon {
+  grid-area: d;
+  padding: 10px;
+  border-top: 1px solid $blue;
+  text-align: center;
+
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    img {
+      max-width: 23%;
+      height: 66px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .casino {
+
+    &-item {
+
+      &.top {
+
+        .casino-item-header {
+          grid-template-areas: 'n t' 'n i' 'n r' 'n b' 'n d' 'g g';
+        }
+      }
+
+      &-header {
+        grid-template-areas: 'n i' 'n r' 'n b' 'n d' 'g g' 'm m';
+        grid-template-columns: 40px 1fr;
+      }
+    }
+
+    &-image {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .rating,
+  .bonus {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background: $blue;
+      width: 80%;
+      height: 1px;
+      top: auto;
+      bottom: 0;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .casino {
+
+    &-item {
+
+      &.top {
+
+        .casino-item-footer {
+          padding: 10px 0;
+        }
+
+        .casino-item-header {
+          grid-template-areas: 'n t t t t t' 'n i b r d g';
+        }
+      }
+
+      &-header {
+        display: grid;
+        grid-template-areas: 'n i b r d g';
+        grid-template-columns: 40px 1fr 1fr 1fr 1fr 1fr;
+
+        & > div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .read-more {
+          display: none;
+          pointer-events: none;
+        }
+
+        .rating {
+          flex-direction: column;
+
+          &-area {
+            margin: 5px auto;
+          }
+
+          .big-text {
+            display: block;
+          }
+        }
+      }
+
+      .casino-item-footer {
+        max-height: 100vh;
+        padding: 10px 0;
+      }
+
+      &-footer {
+        grid-template-areas: 'b b p s d d';
+        grid-template-columns: 40px 1fr 1fr 1fr 1fr 1fr;
+        max-height: 100vh;
+        padding: 0;
+        margin-top: -1px;
+        border-top: 1px solid $blue;
+      }
+
+      &-header,
+      &-footer {
+
+        & > div {
+          border: none;
+          position: relative;
+          padding: 5px 10px;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          &.number,
+          &.top-title,
+          &.button-block,
+          &:last-child {
+
+            &:after {
+              display: none;
+            }
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            bottom: auto;
+            left: auto;
+            right: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 80%;
+            background: $blue;
+          }
+        }
+
+        .top-title {
+          border-bottom: 1px solid $blue;
+        }
+      }
+    }
+  }
+
+  button.play {
+    padding: 9px 14px;
+  }
+
+  .deposit-icon {
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: max-content;
+      max-width: 100%;
+      margin: 10px auto 0;
+
+      &.list-1 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      &.list-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      img {
+        max-height: 50px;
+        max-width: 100%;
+        width: auto;
+        margin: auto;
+      }
+    }
+  }
+
+  .benefit {
+
+    &-item {
+      padding-left: 35px;
+    }
+  }
+}
