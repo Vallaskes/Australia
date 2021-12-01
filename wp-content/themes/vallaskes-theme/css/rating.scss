@@ -12,11 +12,6 @@
     overflow: hidden;
     margin-bottom: 25px;
     transition: .3s;
-    box-shadow: 0 0 0 2px $blue;
-
-    &:hover {
-      box-shadow: 0 0 0 4px $blue;
-    }
 
     &.top {
       box-shadow: 0 0 0 2px $red;
@@ -47,7 +42,6 @@
       }
 
       .read-more {
-        border-bottom: 1px solid $blue;
 
         &:after {
           transform: rotate(0deg);
@@ -97,7 +91,6 @@
   font-size: 1.1rem;
   font-weight: 700;
   padding: 5px 10px;
-  border-bottom: 1px solid $blue;
 
   h3 {
     margin: 0;
@@ -108,7 +101,6 @@
   grid-area: n;
   font-size: 1.25rem;
   color: #fff;
-  background: $blue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,7 +116,6 @@
     content: '';
     width: 1px;
     height: 70%;
-    background: $blue;
     bottom: 0;
     right: 0;
     position: absolute;
@@ -141,7 +132,6 @@
     content: '';
     width: 1px;
     height: 70%;
-    background: $blue;
     top: 0;
     right: 0;
     position: absolute;
@@ -177,7 +167,6 @@
     font-weight: 700;
 
     small {
-      color: $blue;
       font-weight: normal;
     }
   }
@@ -201,8 +190,6 @@
 
 .button-block {
   grid-area: g;
-  border-top: 1px solid $blue;
-  border-bottom: 1px solid $blue;
   margin-top: -1px;
   padding: 15px;
 }
@@ -249,7 +236,6 @@ button.play {
 .benefit {
   grid-area: b;
   padding: 10px 0;
-  border-bottom: 1px solid $blue;
 
   &-list {
     margin: 0;
@@ -280,7 +266,6 @@ button.play {
   margin: 10px 0;
   padding: 0 10px;
   text-align: center;
-  border-right: 1px solid $blue;
 }
 
 .payout-speed {
@@ -292,7 +277,6 @@ button.play {
 .deposit-icon {
   grid-area: d;
   padding: 10px;
-  border-top: 1px solid $blue;
   text-align: center;
 
   &-list {
@@ -339,7 +323,6 @@ button.play {
     &:after {
       content: '';
       position: absolute;
-      background: $blue;
       width: 80%;
       height: 1px;
       top: auto;
@@ -409,7 +392,6 @@ button.play {
         max-height: 100vh;
         padding: 0;
         margin-top: -1px;
-        border-top: 1px solid $blue;
       }
 
       &-header,
@@ -445,12 +427,7 @@ button.play {
             transform: translateY(-50%);
             width: 1px;
             height: 80%;
-            background: $blue;
           }
-        }
-
-        .top-title {
-          border-bottom: 1px solid $blue;
         }
       }
     }

@@ -75,7 +75,7 @@
                             'theme_location' => 'head-menu',
                             'container'       => 'ul',
                             'menu_id'        => 'head-menu',
-                            'depth'          => 2,
+                            'depth'          => 3,
                         )
                     );
                     ?>

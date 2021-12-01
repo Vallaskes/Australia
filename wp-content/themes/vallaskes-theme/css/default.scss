@@ -8,7 +8,7 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: $yellow;
+  background: $red;
 }
 
 * {
@@ -24,7 +24,8 @@
   appearance: none;
 
   &::selection {
-    background: $yellow;
+    background: $red;
+    color: $white;
   }
 }
 
@@ -37,8 +38,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-family: 'Comfortaa', sans-serif;
-  background: $greyLight;
-  color: $darkLight;
+  background: $white;
+  color: $dark;
   text-decoration: none;
   width: 100%;
   overflow-x: hidden;
