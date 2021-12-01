@@ -36,11 +36,11 @@ get_header();
                                 if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
                                 ?>
                             </div>
-                            <div class="text">
+                            <div class="top-casino-text">
                                 <?php the_field('topCasinoText'); ?>
                             </div>
-                            <div class="button">
-                                <button rel="nofollow" class="play" onclick="window.open('<?php the_sub_field('topButtonLink'); ?>', '_blank')">
+                            <div class="top-casino-button">
+                                <button rel="nofollow" class="top-play play" onclick="window.open('<?php the_sub_field('topButtonLink'); ?>', '_blank')">
                                     <?php the_field('topButtonText'); ?>
                                 </button>
                             </div>
@@ -56,42 +56,26 @@ get_header();
                     <div class="casino-list">
                         <?php while( have_rows('casino1') ): the_row(); ?>
                             <div class="casino-item <?php if(get_row_index() == 1): echo 'top'; endif; ?>">
-                                <div class="casino-item-header">
-                                    <div class="number"><?php echo get_row_index(); ?></div>
-                                    <div class="casino-image">
-                                        <?php
-                                        $img = get_sub_field('casino_logo');
-                                        if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
-                                        ?>
-                                    </div>
+                                <div class="number"><?php echo get_row_index(); ?></div>
+                                <div class="casino-image">
                                     <?php
-                                    $rating = get_sub_field('rating');
-                                    $width = $rating * 20;
+                                    $img = get_sub_field('casino_logo');
+                                    if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
                                     ?>
-                                    <div class="rating">
-                                        <?php the_sub_field('ratingTitle'); ?> <?php echo $rating; ?>/5
-                                    </div>
-                                    <div class="bonus">
-                                        <div class="bonus-money">
-                                            <?php the_sub_field('bonus'); ?>
-                                        </div>
-                                        <div class="big-text">
-                                            <?php the_sub_field('bonusText'); ?>
-                                        </div>
-                                    </div>
-                                    <div class="deposit">
-                                        <div class="big-text">
-                                            <?php the_sub_field('depositStrong'); ?>
-                                        </div>
-                                        <div>
-                                            <?php the_sub_field('depositSmall'); ?>
-                                        </div>
-                                    </div>
-                                    <div class="button-block">
-                                        <button rel="nofollow" class="play" onclick="window.open('<?php the_sub_field('casinoLink'); ?>', '_blank')">
-                                            <?php the_sub_field('buttonText'); ?>
-                                        </button>
-                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <?php the_sub_field('ratingTitle'); ?> <?php the_sub_field('rating'); ?>/5
+                                </div>
+                                <div class="bonus">
+                                    <?php the_sub_field('bonus'); ?>
+                                </div>
+                                <div class="deposit">
+                                    <?php the_sub_field('deposit'); ?>
+                                </div>
+                                <div class="button-block">
+                                    <button rel="nofollow" class="play" onclick="window.open('<?php the_sub_field('casinoLink'); ?>', '_blank')">
+                                        <?php the_sub_field('buttonText'); ?>
+                                    </button>
                                 </div>
                             </div>
                         <?php endwhile; ?>
@@ -117,42 +101,31 @@ get_header();
                     <div class="casino-list">
                         <?php while( have_rows('casino2') ): the_row(); ?>
                             <div class="casino-item <?php if(get_row_index() == 1): echo 'top'; endif; ?>">
-                                <div class="casino-item-header">
-                                    <div class="number"><?php echo get_row_index(); ?></div>
-                                    <div class="casino-image">
-                                        <?php
-                                        $img = get_sub_field('casino_logo');
-                                        if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
-                                        ?>
-                                    </div>
+                                <div class="number"><?php echo get_row_index(); ?></div>
+                                <div class="casino-image">
                                     <?php
-                                    $rating = get_sub_field('rating');
-                                    $width = $rating * 20;
+                                    $img = get_sub_field('casino_logo');
+                                    if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
                                     ?>
-                                    <div class="rating">
-                                        <?php the_sub_field('ratingTitle'); ?> <?php echo $rating; ?>/5
+                                </div>
+                                <div class="rating">
+                                    <?php the_sub_field('ratingTitle'); ?> <?php the_sub_field('rating'); ?>/5
+                                </div>
+                                <div class="bonus">
+                                    <?php the_sub_field('bonus'); ?>
+                                </div>
+                                <div class="deposit">
+                                    <div class="big-text">
+                                        <?php the_sub_field('depositStrong'); ?>
                                     </div>
-                                    <div class="bonus">
-                                        <div class="bonus-money">
-                                            <?php the_sub_field('bonus'); ?>
-                                        </div>
-                                        <div class="big-text">
-                                            <?php the_sub_field('bonusText'); ?>
-                                        </div>
+                                    <div>
+                                        <?php the_sub_field('depositSmall'); ?>
                                     </div>
-                                    <div class="deposit">
-                                        <div class="big-text">
-                                            <?php the_sub_field('depositStrong'); ?>
-                                        </div>
-                                        <div>
-                                            <?php the_sub_field('depositSmall'); ?>
-                                        </div>
-                                    </div>
-                                    <div class="button-block">
-                                        <button rel="nofollow" class="play" onclick="window.open('<?php the_sub_field('casinoLink'); ?>', '_blank')">
-                                            <?php the_sub_field('buttonText'); ?>
-                                        </button>
-                                    </div>
+                                </div>
+                                <div class="button-block">
+                                    <button rel="nofollow" class="play" onclick="window.open('<?php the_sub_field('casinoLink'); ?>', '_blank')">
+                                        <?php the_sub_field('buttonText'); ?>
+                                    </button>
                                 </div>
                             </div>
                         <?php endwhile; ?>
@@ -196,8 +169,7 @@ get_header();
         <?php if( have_rows('faq') ): ?>
             <div class="faq">
                 <div class="wrapper">
-                    <h2><?php the_field('faqTitle'); ?></h2>
-                    <div class="pre-text"><?php the_field('faqText');?></div>
+                    <div class="faq-text"><?php the_field('faqText');?></div>
                     <div class="faq-list">
                         <?php while( have_rows('faq') ): the_row(); ?>
                             <div class="faq-item" data-full="false" itemscope itemtype="https://schema.org/FAQPage">

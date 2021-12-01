@@ -5,8 +5,9 @@
   background: $white;
 
   h2 {
-    margin-top: 0;
-    text-align: center;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 

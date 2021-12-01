@@ -13,6 +13,25 @@
 
 	<footer class="site-footer">
 		<div class="wrapper">
+            <div class="believe">
+                <div class="wrapper">
+                    <div class="believe-text">
+                        <?php the_field('beliveText', 'option'); ?>
+                    </div>
+                    <?php if( have_rows('believeIcon', 'option') ): ?>
+                        <div class="believe-icon">
+                            <?php while( have_rows('believeIcon', 'option') ): the_row(); ?>
+                                <div class="believe-item">
+                                    <?php
+                                    $img = get_sub_field('img', 'option');
+                                    if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
+                                    ?>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
             <nav class="footer-navigation">
                 <?php
                 wp_nav_menu(
@@ -26,8 +45,24 @@
                 ?>
             </nav>
             <div class="copyright">
-                Copyright © <?php echo date('Y'); ?>. onlinecasinosrealmoney.com. All Rights Reserved.
+                <div class="left"><?php echo $_SERVER['HTTP_HOST']; ?> is proudly certified by</div>
+                <div class="right">Copyright © <?php echo date('Y'); ?>. <?php echo $_SERVER['HTTP_HOST']; ?>. All Rights Reserved.</div>
             </div>
+            <?php if( have_rows('lastSecureIcon', 'option') ): ?>
+                <div class="secure-icon">
+                    <div class="wrapper">
+                        <?php while( have_rows('lastSecureIcon', 'option') ): the_row(); ?>
+                            <div class="secure-item">
+                                <?php
+                                $img = get_sub_field('img', 'option');
+                                if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
+                                ?>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+
         </div>
 	</footer>
 </div><!-- #page -->

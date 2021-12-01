@@ -174,6 +174,30 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init() {
+
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+
+        // Add parent.
+        $parent = acf_add_options_page(array(
+            'page_title'  => __('Footer'),
+            'menu_title'  => __('Footer'),
+            'menu_slug'     => 'theme-general-settings',
+            'redirect'    => false,
+        ));
+
+        // Add sub page.
+        /*$child = acf_add_options_page(array(
+            'page_title'  => __('Контакты'),
+            'menu_title'  => __('Контакты'),
+            'menu_slug'     => 'theme-contact-settings',
+            'parent_slug' => $parent['menu_slug'],
+        ));*/
+    }
+}
+
 
 /**
  * Remove Emoji
