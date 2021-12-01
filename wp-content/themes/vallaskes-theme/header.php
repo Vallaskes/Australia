@@ -17,7 +17,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1, viewport-fit=cover" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
@@ -50,7 +50,7 @@
                         <!-- svg ring containter -->
                         <div class="burger-ring">
                             <svg class="svg-ring">
-                                <path class="path" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="4" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2" />
+                                <path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="4" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2" />
                             </svg>
                         </div>
                         <!-- the masked path that animates the fill to the ring -->

@@ -11,26 +11,20 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
+	<footer class="site-footer">
 		<div class="wrapper">
-            <div class="footer-block">
-                <nav class="footer-navigation">
-                    <div class="navigation-title h2">More</div>
-                    <?php
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'footer-menu',
-                            'container'       => 'ul',
-                            'menu_id'        => 'footer-menu',
-                            'depth'          => 1,
-                        )
-                    );
-                    ?>
-                </nav>
-                <div class="sidebar-container">
-                    <?php dynamic_sidebar( 'footer' ); ?>
-                </div>
-            </div>
+            <nav class="footer-navigation">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'footer-menu',
+                        'container'       => 'ul',
+                        'menu_id'        => 'footer-menu',
+                        'depth'          => 1,
+                    )
+                );
+                ?>
+            </nav>
             <div class="copyright">
                 Copyright © <?php echo date('Y'); ?>. onlinecasinosrealmoney.com. All Rights Reserved.
             </div>

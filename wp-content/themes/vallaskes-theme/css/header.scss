@@ -9,6 +9,7 @@
   overflow: hidden;
   padding: 10px;
   background: #5f3ade;
+  box-shadow: 0 0 3px 0 rgba(255, 255, 255, .7);
   border-radius: 7px;
   opacity: 0;
   transition: .5s all;
@@ -66,7 +67,7 @@
 }
 
 header {
-  background: $white;
+  background: $purple;
   border-bottom: 1px solid $white;
   height: 55px;
   width: 100%;
@@ -147,7 +148,7 @@ header {
     .button {
       width: 14px;
       height: 14px;
-      background: $arrowMenu no-repeat;
+      background: $arrow no-repeat;
       position: absolute;
       top: 9px;
       left: 10px;
