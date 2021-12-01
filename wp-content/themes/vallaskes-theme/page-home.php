@@ -18,6 +18,37 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+        <div class="after-header-section">
+            <div class="wrapper">
+                <div class="best">
+                    <?php the_title('<h1 class="best-title">', '</h1>'); ?>
+                    <div class="content">
+                        <?php the_content(); ?>
+                    </div>
+                </div>
+                <div class="top">
+                    <h3 class="top-title"><?php the_field('topTitle'); ?></h3>
+                    <div class="top-casino">
+                        <div class="top-casino-container">
+                            <div class="top-casino-img">
+                                <?php
+                                $img = get_sub_field('topCasinoImg');
+                                if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
+                                ?>
+                            </div>
+                            <div class="text">
+                                <?php the_field('topCasinoText'); ?>
+                            </div>
+                            <div class="button">
+                                <button rel="nofollow" class="play" onclick="window.open('<?php the_sub_field('topButtonLink'); ?>', '_blank')">
+                                    <?php the_field('topButtonText'); ?>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php if( have_rows('casino1') ): ?>
             <div class="casino">
                 <div class="wrapper">
@@ -73,8 +104,7 @@ get_header();
                 <div class="wrapper">
                     <?php while( have_rows('firstSection') ): the_row(); ?>
                         <div class="content-item">
-                            <h2><?php the_sub_field('title');?></h2>
-                            <div><?php the_sub_field('text');?></div>
+                            <?php the_sub_field('text');?>
                         </div>
                     <?php endwhile; ?>
                 </div>
@@ -135,8 +165,7 @@ get_header();
                 <div class="wrapper">
                     <?php while( have_rows('doubleSection') ): the_row(); ?>
                         <div class="content-item">
-                            <h2><?php the_sub_field('title');?></h2>
-                            <div><?php the_sub_field('text');?></div>
+                            <?php the_sub_field('text');?>
                         </div>
                     <?php endwhile; ?>
                 </div>
@@ -158,8 +187,7 @@ get_header();
                 <div class="wrapper">
                     <?php while( have_rows('thirdSection') ): the_row(); ?>
                         <div class="content-item">
-                            <h2><?php the_sub_field('title');?></h2>
-                            <div><?php the_sub_field('text');?></div>
+                            <?php the_sub_field('text');?>
                         </div>
                     <?php endwhile; ?>
                 </div>

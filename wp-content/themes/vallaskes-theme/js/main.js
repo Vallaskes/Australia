@@ -28,24 +28,7 @@ trigger.onclick = () => {
     }
 };
 
-let readMoreButton = document.querySelectorAll('.read-more');
-readMoreButton.forEach( e => {
-    e.onclick = () => {
-        e.parentNode.parentNode.classList.toggle('full');
-    }
-});
-
-let iconList = document.querySelectorAll('.deposit-icon-list');
-if(iconList) {
-    iconList.forEach( i => {
-        if(i.childElementCount < 3) {
-            i.classList.add('list-' + i.childElementCount);
-        }
-    })
-}
-
 let faqItem = document.querySelectorAll('.faq-item');
-
 if(faqItem) {
     faqItem.forEach( (i, index) => {
         let faqAnswer = i.querySelector('.faq-answer');
