@@ -45,24 +45,23 @@
                 ?>
             </nav>
             <div class="copyright">
-                <div class="left"><?php echo $_SERVER['HTTP_HOST']; ?> is proudly certified by</div>
+                <div class="left">
+                    <p><?php echo $_SERVER['HTTP_HOST']; ?> is proudly certified by</p>
+                    <?php if( have_rows('lastSecureIcon', 'option') ): ?>
+                        <div class="secure-icon">
+                            <?php while( have_rows('lastSecureIcon', 'option') ): the_row(); ?>
+                                <div class="secure-item">
+                                    <?php
+                                    $img = get_sub_field('img', 'option');
+                                    if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
+                                    ?>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
                 <div class="right">Copyright © <?php echo date('Y'); ?>. <?php echo $_SERVER['HTTP_HOST']; ?>. All Rights Reserved.</div>
             </div>
-            <?php if( have_rows('lastSecureIcon', 'option') ): ?>
-                <div class="secure-icon">
-                    <div class="wrapper">
-                        <?php while( have_rows('lastSecureIcon', 'option') ): the_row(); ?>
-                            <div class="secure-item">
-                                <?php
-                                $img = get_sub_field('img', 'option');
-                                if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
-                                ?>
-                            </div>
-                        <?php endwhile; ?>
-                    </div>
-                </div>
-            <?php endif; ?>
-
         </div>
 	</footer>
 </div><!-- #page -->
