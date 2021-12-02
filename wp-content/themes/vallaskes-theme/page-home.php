@@ -19,7 +19,7 @@ get_header();
 
 	<main id="primary" class="site-main">
         <div class="after-header-section">
-            <div class="wrapper">
+            <div class="wrapper grid">
                 <div class="best">
                     <?php the_title('<h1 class="best-title">', '</h1>'); ?>
                     <div class="content">
@@ -32,7 +32,7 @@ get_header();
                         <div class="top-casino-container">
                             <div class="top-casino-img">
                                 <?php
-                                $img = get_sub_field('topCasinoImg');
+                                $img = get_field('topCasinoImg');
                                 if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
                                 ?>
                             </div>
@@ -40,7 +40,7 @@ get_header();
                                 <?php the_field('topCasinoText'); ?>
                             </div>
                             <div class="top-casino-button">
-                                <button rel="nofollow" class="top-play play" onclick="window.open('<?php the_sub_field('topButtonLink'); ?>', '_blank')">
+                                <button rel="nofollow" class="play-top play" onclick="window.open('<?php the_sub_field('topButtonLink'); ?>', '_blank')">
                                     <?php the_field('topButtonText'); ?>
                                 </button>
                             </div>
