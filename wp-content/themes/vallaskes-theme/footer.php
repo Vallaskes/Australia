@@ -14,23 +14,21 @@
 	<footer class="site-footer">
 		<div class="wrapper">
             <div class="believe">
-                <div class="wrapper">
-                    <div class="believe-text">
-                        <?php the_field('beliveText', 'option'); ?>
-                    </div>
-                    <?php if( have_rows('believeIcon', 'option') ): ?>
-                        <div class="believe-icon">
-                            <?php while( have_rows('believeIcon', 'option') ): the_row(); ?>
-                                <div class="believe-item">
-                                    <?php
-                                    $img = get_sub_field('img', 'option');
-                                    if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
-                                    ?>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-                    <?php endif; ?>
+                <div class="believe-text">
+                    <?php the_field('beliveText', 'option'); ?>
                 </div>
+                <?php if( have_rows('believeIcon', 'option') ): ?>
+                    <div class="believe-icon">
+                        <?php while( have_rows('believeIcon', 'option') ): the_row(); ?>
+                            <div class="believe-item">
+                                <?php
+                                $img = get_sub_field('img', 'option');
+                                if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
+                                ?>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <nav class="footer-navigation">
                 <?php
