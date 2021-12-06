@@ -168,7 +168,7 @@ get_header();
         <?php endif; ?>
         <?php if( have_rows('faq') ): ?>
             <div class="faq">
-                <div class="wrapper">
+                <div class="wrapper box-shadow">
                     <div class="faq-text"><?php the_field('faqText');?></div>
                     <div class="faq-list">
                         <?php while( have_rows('faq') ): the_row(); ?>
