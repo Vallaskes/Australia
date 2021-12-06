@@ -83,7 +83,13 @@ define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+define('FS_METHOD', 'direct');
+/*define('WP_DEBUG', false);
 
+define('FTP_USER', 'example');
+define('FTP_PASS', '*******');
+define('FTP_HOST', 'example.com:21');
+define('FTP_SSL', false);*/
 
 /* That's all, stop editing! Happy publishing. */
 
@@ -94,3 +100,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+

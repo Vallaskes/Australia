@@ -40,9 +40,9 @@ get_header();
                                 <?php the_field('topCasinoText'); ?>
                             </div>
                             <div class="top-casino-button">
-                                <button rel="nofollow" class="play-top play" onclick="window.open('<?php the_sub_field('topButtonLink'); ?>', '_blank')">
+                                <a href="<?php the_sub_field('topButtonLink'); ?>" rel="nofollow" class="play-top play">
                                     <?php the_field('topButtonText'); ?>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -73,9 +73,9 @@ get_header();
                                     <?php the_sub_field('deposit'); ?>
                                 </div>
                                 <div class="button-block">
-                                    <button rel="nofollow" class="play" onclick="window.open('<?php the_sub_field('casinoLink'); ?>', '_blank')">
+                                    <a rel="nofollow" class="play" href="<?php the_sub_field('casinoLink'); ?>">
                                         <?php the_sub_field('buttonText'); ?>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         <?php endwhile; ?>
@@ -94,12 +94,12 @@ get_header();
                 </div>
             </div>
         <?php endif; ?>
-        <?php if( have_rows('casino2') ): ?>
+        <?php if( have_rows('casino1') ): ?>
             <div class="casino">
                 <div class="wrapper">
-                    <h2><?php the_field('casino2-title'); ?></h2>
+                    <h2><?php the_field('casino1-title'); ?></h2>
                     <div class="casino-list">
-                        <?php while( have_rows('casino2') ): the_row(); ?>
+                        <?php while( have_rows('casino1') ): the_row(); ?>
                             <div class="casino-item <?php if(get_row_index() == 1): echo 'top'; endif; ?>">
                                 <div class="number"><?php echo get_row_index(); ?></div>
                                 <div class="casino-image">
@@ -123,9 +123,9 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="button-block">
-                                    <button rel="nofollow" class="play" onclick="window.open('<?php the_sub_field('casinoLink'); ?>', '_blank')">
+                                    <a rel="nofollow" class="play" href="<?php the_sub_field('casinoLink'); ?>">
                                         <?php the_sub_field('buttonText'); ?>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         <?php endwhile; ?>

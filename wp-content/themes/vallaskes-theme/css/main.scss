@@ -3,12 +3,6 @@
   color: $white;
   padding: 25px 0;
   overflow: hidden;
-
-  .top {
-    &-title {
-      margin-top: 0;
-    }
-  }
 }
 
 .best {
@@ -158,6 +152,12 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 50px;
+    }
+
+    .top {
+      &-title {
+        margin-top: 0;
+      }
     }
   }
 }
