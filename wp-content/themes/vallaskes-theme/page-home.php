@@ -18,6 +18,13 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+        <?php if ( !is_front_page() && function_exists('yoast_breadcrumb') ) : ?>
+            <div class="breadcrumb">
+                <div class="wrapper">
+                    <?php yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); ?>
+                </div>
+            </div>
+        <?php endif; ?>
         <div class="after-header-section">
             <div class="wrapper grid">
                 <div class="best">
@@ -27,21 +34,21 @@ get_header();
                     </div>
                 </div>
                 <div class="top">
-                    <h3 class="top-title"><?php the_field('topTitle'); ?></h3>
+                    <h3 class="top-title"><?php the_field('topTitle', 'option'); ?></h3>
                     <div class="top-casino">
                         <div class="top-casino-container">
                             <div class="top-casino-img">
                                 <?php
-                                $img = get_field('topCasinoImg');
+                                $img = get_field('topCasinoImg', 'option');
                                 if( !empty($img) ) : echo wp_get_attachment_image( $img['id'], 'full' ); endif;
                                 ?>
                             </div>
                             <div class="top-casino-text">
-                                <?php the_field('topCasinoText'); ?>
+                                <?php the_field('topCasinoText', 'option'); ?>
                             </div>
                             <div class="top-casino-button">
-                                <a href="<?php the_sub_field('topButtonLink'); ?>" rel="nofollow" class="play-top play">
-                                    <?php the_field('topButtonText'); ?>
+                                <a href="<?php the_sub_field('topButtonLink', 'option'); ?>" rel="nofollow" class="play-top play">
+                                    <?php the_field('topButtonText', 'option'); ?>
                                 </a>
                             </div>
                         </div>

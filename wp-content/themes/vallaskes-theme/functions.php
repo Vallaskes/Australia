@@ -183,18 +183,25 @@ function my_acf_op_init() {
         // Add parent.
         $parent = acf_add_options_page(array(
             'page_title'  => __('Footer'),
-            'menu_title'  => __('Footer'),
+            'menu_title'  => __('Setting'),
             'menu_slug'     => 'theme-general-settings',
             'redirect'    => false,
         ));
 
         // Add sub page.
-        /*$child = acf_add_options_page(array(
-            'page_title'  => __('Контакты'),
-            'menu_title'  => __('Контакты'),
+        $child = acf_add_options_page(array(
+            'page_title'  => __('Head'),
+            'menu_title'  => __('Head'),
             'menu_slug'     => 'theme-contact-settings',
             'parent_slug' => $parent['menu_slug'],
-        ));*/
+        ));
+        // Add sub page.
+        $child = acf_add_options_page(array(
+            'page_title'  => __('Footer'),
+            'menu_title'  => __('Footer'),
+            'menu_slug'     => 'theme-contact-settings',
+            'parent_slug' => $parent['menu_slug'],
+        ));
     }
 }
 

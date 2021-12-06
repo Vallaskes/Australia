@@ -191,6 +191,14 @@ header {
 }
 
 @media (min-width: 1025px) {
+  header {
+    padding: 0;
+  }
+
+  .flex {
+    height: 100%;
+  }
+
   .navigation-button {
     display: none;
   }
@@ -207,6 +215,25 @@ header {
     display: flex;
     align-items: center;
     overflow: initial;
+    background: none;
+    color: $white;
+
+    & > ul {
+      & > .current-menu-item,
+      & > .current-menu-ancestor {
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: $white;
+          transition: .1s;
+        }
+      }
+    }
 
     ul {
       display: flex;
@@ -214,28 +241,33 @@ header {
 
       li {
         margin-right: 15px;
-        position: relative;
         display: inline-flex;
         align-items: center;
+        height: 54px;
+        padding: 10px;
+        transition: .3s;
 
         &:last-child {
           margin-right: 0;
-
-          ul {
-            left: auto;
-            right: 0;
-          }
         }
 
         &:hover {
-          .button {
-            transform: rotate(180deg);
+          background: darken($purple, 15%);
+
+          &.current-menu-item {
+            &:before {
+              opacity: 0;
+            }
           }
 
-          ul {
-            max-height: calc(100vh - 55px);
+          & > .button {
+            transform: rotate(0deg);
+          }
+
+          & > ul {
+            transform: translateY(0);
+            opacity: 1;
             pointer-events: auto;
-            padding: 10px;
           }
         }
       }
@@ -250,32 +282,55 @@ header {
         width: 7px;
         height: 7px;
         top: auto;
+        filter: none;
       }
 
       ul {
         position: absolute;
         flex-direction: column;
         align-items: normal;
-        opacity: 1;
+        opacity: 0;
         top: 100%;
         left: 0;
+        background: darken($purple, 15%);
+        min-width: 100%;
         width: max-content;
-        max-width: 300px;
-        padding: 0 10px;
-        background: $white;
+        max-width: 350px;
+        overflow: initial;
+        transform: translateY(25px);
+        pointer-events: none;
+        max-height: max-content;
+        padding: 0;
+        z-index: 1;
 
         li {
           margin: 0 0 10px;
-          padding: 0;
+
+          &:hover {
+            background: $purple;
+
+            & > .button {
+              transform: rotate(90deg);
+            }
+          }
+
+          & > .button {
+            transform: rotate(90deg);
+          }
 
           &:last-child {
             margin-bottom: 0;
           }
         }
 
+        ul {
+          left: 100%;
+          top: 0;
+        }
+
         a {
           font-weight: 700;
-          padding: 0;
+          padding: 0 10px 0 0;
           transition: .3s;
         }
       }
