@@ -87,6 +87,7 @@
   padding: 15px;
   margin: 25px 0;
   background: $white;
+  box-shadow: 0 0 0 2px lighten($grey, 30%);
 
   h2 {
     &:first-child {
